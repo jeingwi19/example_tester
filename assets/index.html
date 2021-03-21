@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메일 보내기</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="modal_cnt wid400" role="dialog" aria-modal="true" aria-labelledby="contactMe">
+    <h4 class="title blind-b">메일 보내기</h4>
+    <div class="step">
+      <ul>
+        <li class="step_one">
+          <h5 class="step_title">이메일 인증</h5>
+          <form action="#" method="POST" class="one">
+            <table>
+              <caption>이메일 인증 입력 항목 2가지</caption>
+              <colgroup>
+                <col class="w268">
+                <col class="w68">
+              </colgroup>
+              <!-- 인증번호 랜덤 출력 -->
+              <tr>
+                <th scope="row"><label for="proveNumber">
+                  <span class="st_title">인증번호</span>
+                </label></th>
+                <td headers="numbers" colspan="2" align="center">
+                  <p class="random"></p>
+                </td>
+              </tr>
+              <!-- 이메일 주소 입력 -->
+              <tr>
+                <th id="uMailAd" scope="row" colspan="3">
+                  <label for="umail">
+                    <span class="st_title">이메일</span>
+                  </label>
+                </th>
+              </tr>
+              <tr>
+                <td headers="umailTxt">
+                  <input type="text" style="ime-mode:inactive" id="umail" class="umail error first" name="umail" placeholder="이메일 주소 입력" maxlength="40" title="이메일 주소 입력">
+                  <p class="none_p">인증 버튼을 클릭하시면 메일이 전송됩니다.</p>
+                </td>
+                <td class="table"><input class="send_prove" type="submit" value="전송"></td>
+              </tr>
+            </table>
+          </form>
+          <div class="inner_list">
+            <strong class="st_title block">인증번호</strong>
+            <input type="text" id="randomNumb" class="random_numb error" placeholder="인증번호 6자리 입력" maxlength="6" title="인증번호 6자리 입력">
+            <p class="p_a none_p">메일로 받은 인증번호 6자리를 입력해주세요.</p>
+            <button class="" type="button">확인</button>
+          </div>
+          <div class="btns">
+            <button type="button" class="next_btn">다음단계</button>
+          </div>
+        </li>
+        <li class="step_two">
+          <h5 class="step_title">메세지 작성</h5>
+          <form action="#" method="POST" id="mailTxt" class="mail_txt">
+            <table>
+              <caption>텍스트 작성 항목 1가지</caption>
+              <colgroup>
+                <col class="w336">
+              </colgroup>
+              <tr>
+                <th id="txtCnt">
+                  <label for="txtArea">
+                    <span class="blind-b">텍스트 작성 입력란</span>
+                  </label>
+                </th>
+                <td headers="txtCnt" class="txt_cnt">
+                  <textarea name="txtArea" id="txtArea" class="txt_area" cols="30" rows="6" placeholder="내용을 입력해주세요." maxlength="100"></textarea>
+                  <p>1자 이상 100자 이하로 입력해주세요.</p>
+                </td>
+              </tr>
+            </table>
+          </form>
+          <div class="btns">
+            <button type="button" class="prev_btn">이전단계</button>
+            <button type="button" class="next_btn">다음단계</button>
+          </div>
+        </li>
+        <li class="step_final">
+          <h5 class="step_title">전송완료</h5>
+          <p>전송이 완료 되었습니다.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="step_view">
+      <ul>
+        <li class="arrow">이메일 인증</li>
+        <li class="arrow apart now">메세지 작성</li>
+        <li>전송완료</li>
+      </ul>
+    </div>
+    <button type="button" class="close_btn last"><span class="blind-b">닫기</span></button>
+  </div>
+  <script tpye="text/javascript">
+    let ranArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    let randomNumb = Math.floor(Math.random() * 10);
+
+    let answer;
+    const ran1 = String(Math.floor(Math.random() * 10));
+    const ran2 = String(Math.floor(Math.random() * 10));
+    const ran3 = String(Math.floor(Math.random() * 10));
+    const ran4 = String(Math.floor(Math.random() * 10));
+    const ran5 = String(Math.floor(Math.random() * 10));
+    const ran6 = String(Math.floor(Math.random() * 10));
+    //let rands = ran1 + ran2 + ran3 + ran4 + ran5 + ran6;
+    let rands = [ran1, ran2, ran3, ran4, ran5, ran6];
+    let randsJoin = rands.join('');//배열 쉼표 제거
+    console.log(rands);//랜덤 배열 순서 안에 랜덤숫자
+    
+    function shuffle(a){
+      let j, x, i;
+      for(let i = a.length; i; i -= 1){
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+      }
+      console.log(a);//배열 순서 그대로 숫자만 변경
+    }
+    let shuf = shuffle(rands);
+    //console.log(shuf);
+
+    //let txtRand = document.querySelector('.random');
+    //txtRand.wrtie(rands);
+    document.querySelector('.random').createTextNode(randsJoin);
+  </script>
+</body>
+</html>

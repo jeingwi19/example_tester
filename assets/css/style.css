@@ -1,0 +1,121 @@
+@charset "UTF-8";
+@font-face{
+  font-family: NtSansKR;
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/NotoSans-Regular.eot');
+  src: url('../fonts/NotoSans-Regular.eot#iefix') format('embedded-opentype'), url('../fonts/NotoSans-Regular.woff2') format('woff2'), url('../fonts/NotoSans-Regular.woff') format('woff'), url('../fonts/NotoSans-Regular.otf') format('opentype');
+}
+@font-face{
+  font-family: NtSansKR;
+  font-weight: 500;
+  font-style: normal;
+  src: url('../fonts/NotoSans-Medium.eot');
+  src: url('../fonts/NotoSans-Medium.eot#iefix') format('embedded-opentype'), url('../fonts/NotoSans-Medium.woff2') format('woff2'), url('../fonts/NotoSans-Medium.woff') format('woff'), url('../fonts/NotoSans-Medium.otf') format('opentype');
+}
+@font-face{
+  font-family: NtSansKR;
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/NotoSans-Bold.eot');
+  src: url('../fonts/NotoSans-Bold.eot#iefix') format('embedded-opentype'), url('../fonts/NotoSans-Bold.woff2') format('woff2'), url('../fonts/NotoSans-Bold.woff') format('woff'), url('../fonts/NotoSans-Bold.otf') format('opentype');
+}
+
+/* tag reset */
+body, h1, h2, h3, h4, h5, h6, p, th, td, ul, button, form, input{margin: 0;padding: 0;}
+h1{font-size: 100%;}
+ul{list-style: none;}
+a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit;}
+button, input[type=submit]{border: none;background: none;cursor: pointer;}
+input, button, textarea{font-family: inherit;font-size: inherit;color: inherit;line-height: inherit;border: none;}
+img{vertical-align: top;border: none;}
+img, figure{max-width: 100%;}
+table{border-style: 0;border-collapse: collapse;}
+caption{width: 1px;height: 1px;overflow: hidden;border: none;margin: -1px;clip: rect(1px, 1px, 1px, 1px);clip: inset(50%);}
+header, nav, section, footer{display: block;}
+
+/* common class */
+.f_l{float: left;}
+.f_r{float: right;}
+.p_r{position: relative;}
+.p_a{position: absolute;}
+.clearfix::after{content: "";display: block;clear: both;}
+.blind-b{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+.wid1280{max-width: 1280px;width: 100%;margin: 0 auto;}
+.wid400{max-width: 400px;width: 100%;margin: 0 auto;border: 1px solid #dbdbdb;border-radius: 8px;}
+.w268{width: 268px;}
+.w68{width: 26px;}
+.step_title{font-size: 24px;color: #191919;margin-bottom: 32px;}
+button, .step_one input[type="submit"]{display: inline-block;font-size: 16px;border-radius: 8px;padding: 8px 16px;background: #fff;height: 40px;}
+button{border: 1px solid #ccc;color: #ccc;}
+input + p, textarea + p{font-size: 10px;color: #999;margin-top: 6px;}
+textarea + p{margin-left: 8px;}
+textarea{resize: none;}
+input[type="text"]{position: relative;display: inline-block;width: 260px;line-height: 40px;border-bottom: 1px solid #999;}
+/* input[type="text"]::before{content: "";position: absolute;width: 100%;height: 100px;bottom: -1px;left: 0;background: #999;} */
+.btns{margin-top: 52px;width: 336px;}
+
+/* body */
+body{font-family: "NtSansKR", sans-serif, "Malgun Gothic";font-size: 16px;color: #595959;line-height: 1;font-weight: 400;word-break: keep-all;}
+*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+
+/* 본문 - 공통 */
+.modal_cnt{position: relative;top: 60px;left: auto;width: 400px;}
+.step{
+  padding: 72px 32px 0 32px;
+}
+.step .st_title{display: inline-block;font-weight: 400;margin-bottom: 8px;}
+.step .block{display: block;}
+.inner_list{margin-top: 32px;}
+
+/* 절차 - 1단계 */
+.step_one .send_prove{border: 1px solid #595959;color: #595959;vertical-align: top;}
+.table{display: table;}
+.table .send_prove{display: table-cell;vertical-align: top;}
+
+/* 절차 - 2단계 */
+.step_two{display: none;}
+.txt_area{width: 336px;padding: 20px 24px;border: 1px solid #dbdbdb;border-radius: 8px;}
+
+/* 절차 - 3단계 */
+.step_final{display: none;}
+
+
+/* 진행 단계 비주얼 */
+.step_view{
+  margin: 54px 32px 32px 32px;width: 336px;height: 40px;
+}
+.step_view ul li{float: left;width: 104px;height: 40px;font-size: 12px;padding: 11px 23px;text-align: center;color: #ccc;}
+.arrow{position: relative;}
+.arrow::before{content: "";position: absolute;top: calc(50% - 8px);right: -12px;width: 12px;height: 16px;background: url('../img/arrow_lightgray.svg') center no-repeat;}
+.apart{margin: 0 12px;}
+
+/* 전체 닫기버튼 */
+.close_btn{position: absolute;top: 16px;right: 16px;width: 40px;height: 40px;border: none;}
+.close_btn::before{content: "";position: absolute;width: 16px;height: 16px;top: calc(50% - 8px);left: calc(50% - 8px);background: url('../img/btn_close_darkgray.svg');}
+
+
+/* 이메일 입력 에러 */
+#umail.error{border-bottom-color: #DE2525;}
+#umail.error + .none_p{display: none;}
+#umail.error + .error_txt{color: #DE2525;}
+
+/* 이메일 전송 성공 */
+#umail.succ + .none_p{display: none;}
+
+/* 인증번호 입력 에러 */
+#randomNumb.error{border-bottom-color: #DE2525;}
+#randomNumb.error + .none_p{display: none;}
+#randomNumb.error + .error_txt{color: #DE2525;}
+
+/* 인증번호 인증 성공 */
+#randomNumb.succ{border-bottom-color: #21AB00;}
+#randomNumb.succ + .none_p{display: none;}
+#randomNumb.succ + .succ_txt{color: #21AB00;}
+
+/* .check .active추가 */
+.active{color: #595959;border-color: #595959;}
+
+/* 현재 단계별 위치 */
+.arrow.now{color: #595959;}
+.arrow.now::before{background: url('../img/arrow_darkgray.svg');}
