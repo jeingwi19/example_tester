@@ -15,7 +15,7 @@
       <ul>
         <li class="step_one">
           <h5 class="step_title">이메일 인증</h5>
-          <form action="#" method="POST" class="one">
+          <form class="one" action="#" method="POST" enctype="multipart/form-data">
             <table>
               <caption>이메일 인증 입력 항목 2가지</caption>
               <colgroup>
@@ -28,7 +28,7 @@
                   <span class="st_title">인증번호</span>
                 </label></th>
                 <td headers="numbers" colspan="2" align="center">
-                  <p class="random"></p>
+                  <p id="random"></p>
                 </td>
               </tr>
               <!-- 이메일 주소 입력 -->
@@ -41,7 +41,7 @@
               </tr>
               <tr>
                 <td headers="umailTxt">
-                  <input type="text" style="ime-mode:inactive" id="umail" class="umail error first" name="umail" placeholder="이메일 주소 입력" maxlength="40" title="이메일 주소 입력">
+                  <input type="email" style="ime-mode:inactive" id="umail" class="umail first" name="umail" placeholder="이메일 주소 입력" maxlength="40" title="이메일 주소 입력">
                   <p class="none_p">인증 버튼을 클릭하시면 메일이 전송됩니다.</p>
                 </td>
                 <td class="table"><input class="send_prove" type="submit" value="전송"></td>
@@ -50,7 +50,7 @@
           </form>
           <div class="inner_list">
             <strong class="st_title block">인증번호</strong>
-            <input type="text" id="randomNumb" class="random_numb error" placeholder="인증번호 6자리 입력" maxlength="6" title="인증번호 6자리 입력">
+            <input type="text" id="randomNumb" class="random_numb" placeholder="인증번호 6자리 입력" maxlength="6" title="인증번호 6자리 입력">
             <p class="p_a none_p">메일로 받은 인증번호 6자리를 입력해주세요.</p>
             <button class="" type="button">확인</button>
           </div>

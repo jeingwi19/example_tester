@@ -51,7 +51,7 @@ button{border: 1px solid #ccc;color: #ccc;}
 input + p, textarea + p{font-size: 10px;color: #999;margin-top: 6px;}
 textarea + p{margin-left: 8px;}
 textarea{resize: none;}
-input[type="text"]{position: relative;display: inline-block;width: 260px;line-height: 40px;border-bottom: 1px solid #999;}
+input[type="text"], input[type="email"]{position: relative;display: inline-block;width: 260px;line-height: 40px;border-bottom: 1px solid #999;}
 /* input[type="text"]::before{content: "";position: absolute;width: 100%;height: 100px;bottom: -1px;left: 0;background: #999;} */
 .btns{margin-top: 52px;width: 336px;}
 
