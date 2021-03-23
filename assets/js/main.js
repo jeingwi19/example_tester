@@ -33,3 +33,9 @@ window.addEventListener('load', function(){
   let newtext = document.createTextNode(randsJoin);
   para.appendChild(newtext);
 });
+
+/* 입력되는 input태그 value값 불러오기 */
+function inputVal() {
+  let inpt = document.getElementById('umail').value;
+  console.log(inpt);
+}
